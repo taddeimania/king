@@ -1,0 +1,9 @@
+{{#each model as |api|}}
+  {{api.name}}
+  {{api.retries}}
+  {{api.https_only}}
+  {{#each api.hosts as |host|}}
+    {{host}}
+  {{/each}}
+{{/each}}
+{{outlet}}

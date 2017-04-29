@@ -8,6 +8,8 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route("index");
+  this.route("api");
+  this.route("status");
   this.route("info");
 });
 
