@@ -1,9 +1,4 @@
 {{#each model as |api|}}
-  {{api.name}}
-  {{api.retries}}
-  {{api.https_only}}
-  {{#each api.hosts as |host|}}
-    {{host}}
-  {{/each}}
+  {{api-widget model=api}}
 {{/each}}
 {{outlet}}
