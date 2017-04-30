@@ -1,7 +1,46 @@
-{{link-to "index" "index"}}
-{{link-to "api" "api"}}
-{{link-to "status" "status"}}
-{{link-to "info" "info"}}
-<br>
+    <header class="site-header">
+      <div class="navbar">
+        <div class="container">
+          <a href="/" class="navbar-brand"><img src="/assets/images/branding.svg" alt="Kong" width="99" height="32"></a>
 
-{{outlet}}
+          </div>
+        </div><!-- .navbar -->
+    </header>
+    <header class="page-header">
+      <div class="container">
+        <div class="page-header-title">
+          <h1>Kong Admin</h1>
+          <p>Administrate your Kong Instance</p>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+    <aside class="page-navigation">
+      <nav>
+        <h5>Admin</h5>
+        <ul>
+          <li>
+            {{link-to "Your APIs" "api"}}
+          </li>
+        </ul>
+      </nav>
+      <nav>
+        <h5>Information</h5>
+        <ul>
+          <li>
+            {{link-to "Kong Status" "status"}}
+          </li>
+          <li>
+            {{link-to "Kong Configuration Info" "info"}}
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="page-content-container">
+      <div class="page-content">
+        <div class="content">
+          {{outlet}}
+        </div>
+      </div>
+    </div>
+  </div>
