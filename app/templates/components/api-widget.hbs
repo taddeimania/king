@@ -150,19 +150,3 @@
   </table>
 </div>
 <hr>
-
-<form class="api-widget-form">
-  <div class="input-group">
-    <label for="email">Email</label>
-    <input type="email" name="email" placeholder="youre@awesome.com" required="">
-    <button class="button button-primary" type="submit">Subscribe</button>
-  </div>
-</form>
-
-{{model.name}}
-{{model.retries}}
-{{model.https_only}}
-{{#each model.hosts as |host|}}
-  {{host}}
-{{/each}}
-{{yield}}
