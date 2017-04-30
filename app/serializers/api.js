@@ -13,5 +13,8 @@ export default DS.JSONAPISerializer.extend({
       record["attributes"] = record;
     })
     return payload;
+  },
+  normalizeUpdateRecordResponse(store, type, payload, id, requestType) {
+    return this.normalizeFindRecordResponse(...arguments);
   }
 });
