@@ -1,0 +1,102 @@
+<h3>{{model.name}} </h3>
+<p>
+  {{#if editing}}
+    <button class="button button-dark" {{action "cancelEditing"}}>Cancel</button>
+    <button class="button button-primary" {{action "saveEditing"}}>Save</button>
+  {{else}}
+    <button class="button button-primary" {{action "toggleEditing"}}>Edit</button>
+  {{/if}}
+</p>
+<div>
+  <table class="api-widget">
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>name</code></td>
+        <td>
+          {{#if editing}}
+            {{input value=model.name}}
+          {{else}}
+            {{model.name}}
+          {{/if}}
+        </td>
+      </tr>
+      <tr>
+        <td><code>hosts</code><br><em>semi-optional</em></td>
+        <td>
+          {{#if editing}}
+            {{input value=model.hosts}}
+          {{else}}
+            {{model.hosts}}
+          {{/if}}
+        </td>
+      </tr>
+      <tr>
+        <td><code>uris</code><br><em>semi-optional</em></td>
+        <td>{{model.uris}}</td>
+      </tr>
+      <tr>
+        <td><code>methods</code><br><em>semi-optional</em></td>
+        <td>{{model.methods}}</td>
+      </tr>
+      <tr>
+        <td><code>upstream_url</code></td>
+        <td>{{model.upstream_url}}</td>
+      </tr>
+      <tr>
+        <td><code>strip_uri</code><br><em>optional</em></td>
+        <td>{{model.strip_uri}}</td>
+      </tr>
+      <tr>
+        <td><code>preserve_host</code><br><em>optional</em></td>
+        <td>{{model.preserve_host}}</td>
+      </tr>
+      <tr>
+        <td><code>retries</code><br><em>optional</em></td>
+        <td>{{model.retries}}</td>
+      </tr>
+      <tr>
+        <td><code>upstream_connect_timeout</code><br><em>optional</em></td>
+        <td>{{model.upstream_connect_timeout}}</td>
+      </tr>
+      <tr>
+        <td><code>upstream_send_timeout</code><br><em>optional</em></td>
+        <td>{{model.upstream_send_timeout}}</td>
+      </tr>
+      <tr>
+        <td><code>upstream_read_timeout</code><br><em>optional</em></td>
+        <td>{{model.upstream_read_timeout}}</td>
+      </tr>
+      <tr>
+        <td><code>https_only</code><br><em>optional</em></td>
+        <td>{{model.https_only}}</td>
+      </tr>
+      <tr>
+        <td><code>http_if_terminated</code><br><em>optional</em></td>
+        <td>{{model.http_if_terminated}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<hr>
+
+<form class="api-widget-form">
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" placeholder="youre@awesome.com" required="">
+    <button class="button button-primary" type="submit">Subscribe</button>
+  </div>
+</form>
+
+{{model.name}}
+{{model.retries}}
+{{model.https_only}}
+{{#each model.hosts as |host|}}
+  {{host}}
+{{/each}}
+{{yield}}
