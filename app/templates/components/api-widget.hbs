@@ -20,7 +20,7 @@
         <td><code>name</code></td>
         <td>
           {{#if editing}}
-            {{input value=model.name}}
+            {{input value=model.name required=true}}
           {{else}}
             {{model.name}}
           {{/if}}
@@ -38,47 +38,113 @@
       </tr>
       <tr>
         <td><code>uris</code><br><em>semi-optional</em></td>
-        <td>{{model.uris}}</td>
+        <td>
+          {{#if editing}}
+            {{input value=model.uris}}
+          {{else}}
+            {{model.uris}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
         <td><code>methods</code><br><em>semi-optional</em></td>
-        <td>{{model.methods}}</td>
+        <td>
+          {{#if editing}}
+            {{input value=model.methods}}
+          {{else}}
+            {{model.methods}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
         <td><code>upstream_url</code></td>
-        <td>{{model.upstream_url}}</td>
+        <td>
+          {{#if editing}}
+            {{input value=model.upstream_url}}
+          {{else}}
+            {{model.upstream_url}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
         <td><code>strip_uri</code><br><em>optional</em></td>
-        <td>{{model.strip_uri}}</td>
+        <td>
+          {{#if editing}}
+            {{input name="strip_uri" type="checkbox" checked=model.strip_uri}}
+          {{else}}
+            {{input name="strip_uri" type="checkbox" checked=model.strip_uri disabled=true}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
         <td><code>preserve_host</code><br><em>optional</em></td>
-        <td>{{model.preserve_host}}</td>
+        <td>
+          {{#if editing}}
+            {{input name="preserve_host" type="checkbox" checked=model.preserve_host}}
+          {{else}}
+            {{input name="preserve_host" type="checkbox" checked=model.preserve_host disabled=true}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
         <td><code>retries</code><br><em>optional</em></td>
-        <td>{{model.retries}}</td>
+        <td>
+          {{#if editing}}
+            {{input value=model.retries}}
+          {{else}}
+            {{model.retries}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
         <td><code>upstream_connect_timeout</code><br><em>optional</em></td>
-        <td>{{model.upstream_connect_timeout}}</td>
+        <td>
+          {{#if editing}}
+            {{input value=model.upstream_connect_timeout}}
+          {{else}}
+            {{model.upstream_connect_timeout}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
         <td><code>upstream_send_timeout</code><br><em>optional</em></td>
-        <td>{{model.upstream_send_timeout}}</td>
+        <td>
+          {{#if editing}}
+            {{input value=model.upstream_send_timeout}}
+          {{else}}
+            {{model.upstream_send_timeout}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
         <td><code>upstream_read_timeout</code><br><em>optional</em></td>
-        <td>{{model.upstream_read_timeout}}</td>
+        <td>
+          {{#if editing}}
+            {{input value=model.upstream_read_timeout}}
+          {{else}}
+            {{model.upstream_read_timeout}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
         <td><code>https_only</code><br><em>optional</em></td>
-        <td>{{model.https_only}}</td>
+        <td>
+          {{#if editing}}
+            {{input name="https_only" type="checkbox" checked=model.https_only}}
+          {{else}}
+            {{input name="https_only" type="checkbox" checked=model.https_only disabled=true}}
+          {{/if}}
+        </td>
       </tr>
       <tr>
         <td><code>http_if_terminated</code><br><em>optional</em></td>
-        <td>{{model.http_if_terminated}}</td>
+        <td>
+          {{#if editing}}
+            {{input name="http_if_terminated" type="checkbox" checked=model.http_if_terminated}}
+          {{else}}
+            {{input name="http_if_terminated" type="checkbox" checked=model.http_if_terminated disabled=true}}
+          {{/if}}
+        </td>
       </tr>
     </tbody>
   </table>
