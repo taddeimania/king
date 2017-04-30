@@ -10,8 +10,8 @@
 <h3>Timers</h3>
 <table>
   <tr>
-    <td>Running</td>
-    <td>Pending</td>
+    <th>Running</th>
+    <th>Pending</th>
   </tr>
   <tr>
     <td>{{model.timers.running}}</td>
@@ -22,6 +22,10 @@
 <h3>Configuration</h3>
 
 <table>
+  <tr>
+    <th>Param</th>
+    <th>Value</th>
+  </tr>
   <tr>
     <td>nginx_acc_logs</td>
     <td>{{model.configuration.nginx_acc_logs}}</td>
@@ -330,116 +334,149 @@
     <td>cluster_listen_rpc</td>
     <td>{{model.configuration.cluster_listen_rpc}}</td>
   </tr>
-  <tr colspan=2>
-    <td>PLUGINS</td>
+</table>
+
+<h3>Plugins</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Available</th>
+    <th>Enabled</th>
   </tr>
   <tr>
     <td>syslog</td>
     <td>{{model.configuration.plugins.syslog}}</td>
+    <td>{{model.plugins.enabled_in_cluster.syslog}}</td>
   </tr>
   <tr>
     <td>ldap-auth</td>
     <td>{{model.configuration.plugins.ldap-auth}}</td>
+    <td>{{model.plugins.enabled_in_cluster.ldap-auth}}</td>
   </tr>
   <tr>
     <td>rate-limiting</td>
     <td>{{model.configuration.plugins.rate-limiting}}</td>
+    <td>{{model.plugins.enabled_in_cluster.rate-limiting}}</td>
   </tr>
   <tr>
     <td>response-ratelimiting</td>
     <td>{{model.configuration.plugins.response-ratelimiting}}</td>
+    <td>{{model.plugins.enabled_in_cluster.response-ratelimiting}}</td>
   </tr>
   <tr>
     <td>request-size-limiting</td>
     <td>{{model.configuration.plugins.request-size-limiting}}</td>
+    <td>{{model.plugins.enabled_in_cluster.request-size-limiting}}</td>
   </tr>
   <tr>
     <td>correlation-id</td>
     <td>{{model.configuration.plugins.correlation-id}}</td>
+    <td>{{model.plugins.enabled_in_cluster.correlation-id}}</td>
   </tr>
   <tr>
     <td>jwt</td>
     <td>{{model.configuration.plugins.jwt}}</td>
+    <td>{{model.plugins.enabled_in_cluster.jwt}}</td>
   </tr>
   <tr>
     <td>runscope</td>
     <td>{{model.configuration.plugins.runscope}}</td>
+    <td>{{model.plugins.enabled_in_cluster.runscope}}</td>
   </tr>
   <tr>
     <td>hmac-auth</td>
     <td>{{model.configuration.plugins.hmac-auth}}</td>
+    <td>{{model.plugins.enabled_in_cluster.hmac-auth}}</td>
   </tr>
   <tr>
     <td>http-log</td>
     <td>{{model.configuration.plugins.http-log}}</td>
+    <td>{{model.plugins.enabled_in_cluster.http-log}}</td>
   </tr>
   <tr>
     <td>tcp-log</td>
     <td>{{model.configuration.plugins.tcp-log}}</td>
+    <td>{{model.plugins.enabled_in_cluster.tcp-log}}</td>
   </tr>
   <tr>
     <td>file-log</td>
     <td>{{model.configuration.plugins.file-log}}</td>
+    <td>{{model.plugins.enabled_in_cluster.file-log}}</td>
   </tr>
   <tr>
     <td>udp-log</td>
     <td>{{model.configuration.plugins.udp-log}}</td>
+    <td>{{model.plugins.enabled_in_cluster.udp-log}}</td>
   </tr>
   <tr>
     <td>loggly</td>
     <td>{{model.configuration.plugins.loggly}}</td>
+    <td>{{model.plugins.enabled_in_cluster.loggly}}</td>
   </tr>
   <tr>
     <td>request-transformer</td>
     <td>{{model.configuration.plugins.request-transformer}}</td>
+    <td>{{model.plugins.enabled_in_cluster.request-transformer}}</td>
   </tr>
   <tr>
     <td>response-transformer</td>
     <td>{{model.configuration.plugins.response-transformer}}</td>
+    <td>{{model.plugins.enabled_in_cluster.response-transformer}}</td>
   </tr>
   <tr>
     <td>statsd</td>
     <td>{{model.configuration.plugins.statsd}}</td>
+    <td>{{model.plugins.enabled_in_cluster.statsd}}</td>
   </tr>
   <tr>
     <td>basic-auth</td>
     <td>{{model.configuration.plugins.basic-auth}}</td>
+    <td>{{model.plugins.enabled_in_cluster.basic-auth}}</td>
   </tr>
   <tr>
     <td>bot-detection</td>
     <td>{{model.configuration.plugins.bot-detection}}</td>
+    <td>{{model.plugins.enabled_in_cluster.bot-detection}}</td>
   </tr>
   <tr>
     <td>galileo</td>
     <td>{{model.configuration.plugins.galileo}}</td>
+    <td>{{model.plugins.enabled_in_cluster.galileo}}</td>
   </tr>
   <tr>
     <td>datadog</td>
     <td>{{model.configuration.plugins.datadog}}</td>
+    <td>{{model.plugins.enabled_in_cluster.datadog}}</td>
   </tr>
   <tr>
     <td>acl</td>
     <td>{{model.configuration.plugins.acl}}</td>
+    <td>{{model.plugins.enabled_in_cluster.acl}}</td>
   </tr>
   <tr>
     <td>ip-restriction</td>
     <td>{{model.configuration.plugins.ip-restriction}}</td>
+    <td>{{model.plugins.enabled_in_cluster.ip-restriction}}</td>
   </tr>
   <tr>
     <td>cors</td>
     <td>{{model.configuration.plugins.cors}}</td>
+    <td>{{model.plugins.enabled_in_cluster.cors}}</td>
   </tr>
   <tr>
     <td>aws-lambda</td>
     <td>{{model.configuration.plugins.aws-lambda}}</td>
+    <td>{{model.plugins.enabled_in_cluster.aws-lambda}}</td>
   </tr>
   <tr>
     <td>oauth2</td>
     <td>{{model.configuration.plugins.oauth2}}</td>
+    <td>{{model.plugins.enabled_in_cluster.oauth2}}</td>
   </tr>
   <tr>
     <td>key-auth</td>
     <td>{{model.configuration.plugins.key-auth}}</td>
+    <td>{{model.plugins.enabled_in_cluster.key-auth}}</td>
   </tr>
 </table>
 
