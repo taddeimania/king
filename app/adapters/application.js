@@ -16,6 +16,12 @@ export default DS.JSONAPIAdapter.extend({
     return hash;
   },
 
+  createRecord(store, type, snapshot) {
+    let data = Ember.$.param(snapshot._attributes);
+    let url = this.buildURL(type.modelName, null, snapshot, 'createRecord');
+    return this.ajax(url, "POST", { data: data });
+  },
+
   updateRecord (store, type, snapshot){
       let id = snapshot.id;
       if (typeof snapshot._attributes.hosts === "object"){
