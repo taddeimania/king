@@ -10,7 +10,7 @@ export default DS.JSONAPIAdapter.extend({
 
   ajaxOptions (url, type, options) {
     let hash = this._super(...arguments);
-    if (Object.keys(hash.data).length > 0){
+    if (hash.data && Object.keys(hash.data).length > 0 && hash.type === "PATCH"){
       hash.data = hash.data.slice(1, -1);
     }
     return hash;
