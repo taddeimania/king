@@ -1,0 +1,74 @@
+<div>
+<h3>Add an API to Kong</h3>
+<form>
+  <div>
+    <label for="apiName">Api Name:</label>
+    {{input name="name" id="apiName" value=apiName}}
+  </div>
+  <div>
+    <label for="apiUpstreamUrl">Upstream Url:</label>
+    <small>The base target URL that points to your API server. This URL will be used for proxying requests.</small>
+    {{input name="upstream_url" id="apiUpstreamUrl" value=apiUpstreamUrl}}
+  </div>
+  <div class="alert alert-warning">
+    *At least one of hosts, uris, or methods should be specified.
+  </div>
+  <div>
+    <label for="apiHosts">Hosts:</label>
+    <small>A comma-separated list of domain names that point to your API.</small><br/>
+    {{input name="hosts" id="apiHosts" value=apiHosts}}
+  </div>
+  <div>
+    <label for="apiUris">Uris:</label>
+    <small>A comma-separated list of URIs prefixes that point to your API.</small><br/>
+    {{input name="uris" id="apiUris" value=apiUris}}
+  </div>
+  <div>
+    <label for="apiMethods">Methods:</label>
+    <small>A comma-separated list of HTTP methods that point to your API.</small><br/>
+    {{input name="methods" id="apiMethods" value=apiMethods}}
+  </div>
+  <div>
+    <label for="retries">Retries:</label>
+    <small>The number of retries to execute upon failure to proxy.</small>
+    {{input name="retries" id="retries" value=retries}}
+  </div>
+  <div>
+    <label for="upstreamConnectTimeout">Upstream Connect Timeout:</label>
+    <small>The timeout in milliseconds for establishing a connection to your upstream service.</small>
+    {{input name="upstreamConnectTimeout" id="upstreamConnectTimeout" value=upstreamConnectTimeout}}
+  </div>
+  <div>
+    <label for="upstreamSendTimeout">Upstream Send Timeout:</label>
+    <small>The timeout in milliseconds between two successive write operations for transmitting a request to your upstream service.</small>
+    {{input name="upstreamSendTimeout" id="upstreamSendTimeout" value=upstreamSendTimeout}}
+  </div>
+  <div>
+    <label for="upstreamReadTimeout">Upstream Read Timeout:</label>
+    <small>The timeout in milliseconds between two successive read operations for transmitting a request to your upstream service.</small>
+    {{input name="upstreamReadTimeout" id="upstreamReadTimeout" value=upstreamReadTimeout}}
+  </div>
+  <div>
+    <label for="stripUri">Strip Uri:
+    {{input name="stripUri" id="stripUri" checked=stripUri type="checkbox"}}
+    </label>
+  </div>
+  <div>
+    <label for="preserveHost">Preserve Host:
+    {{input name="preserveHost" id="preserveHost" checked=preserveHost type="checkbox"}}
+    </label>
+  </div>
+  <div>
+    <label for="httpsOnly">Https Only:
+    {{input name="https_only" id="httpsOnly" checked=httpsOnly type="checkbox"}}
+    </label>
+  </div>
+  <div>
+    <label for="httpIfTerminated">Http If Terminated:
+    {{input name="http_if_terminated" id="httpIfTerminated" checked=httpIfTerminated type="checkbox"}}
+    </label>
+  </div>
+  <input type="submit" class="button button-primary" {{action "createApi"}} value="Create" />
+</form>
+</div>
+

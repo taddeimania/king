@@ -1,4 +1,4 @@
-<h3>{{model.name}} </h3>
+<h3>{{model.name}}</h3>
 <p>
   {{#if editing}}
     <button class="button button-dark" {{action "cancelEditing"}}>Cancel</button>
@@ -6,6 +6,12 @@
   {{else}}
     <button class="button button-primary" {{action "toggleEditing"}}>Edit</button>
   {{/if}}
+  {{#unless deleting}}
+    <button class="button button-danger" {{action "confirmDelete"}}>Delete</button>
+  {{else}}
+    <button class="button button-danger" {{action "actualDelete"}}>Are You Sure? - Yes</button>
+    <button class="button button-primary" {{action "cancelDelete"}}>No</button>
+  {{/unless}}
 </p>
 <div>
   <table class="api-widget">
