@@ -10,3 +10,24 @@ table.api-widget > tbody > tr {
 table.api-widget > tbody > tr> td:nth-child(1) {
   width: 40%;
 }
+
+form .alert {
+  width: 100%;
+  display: inline-block;
+}
+
+input[type=text] {
+  width: 100%;
+}
+
+.button.button-danger {
+  color: #fff;
+  border: 0 none;
+  padding: 1px 14px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.2);
+  border-radius: 3px;
+  background-color: #bf4343;
+  background-image: -webkit-linear-gradient(top,#bf4343,#ad3c3c);
+  background-image: linear-gradient(to bottom,#bf4343,#ad3c3c);
+  box-shadow: inset 0 -1px 0 #612222;
+}
