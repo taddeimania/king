@@ -16,5 +16,8 @@ export default DS.JSONAPISerializer.extend({
   },
   normalizeUpdateRecordResponse(store, type, payload, id, requestType) {
     return this.normalizeFindRecordResponse(...arguments);
+  },
+  normalizeCreateRecordResponse(store, type, payload, id, requestType) {
+    return this.normalizeFindRecordResponse(...arguments);
   }
 });
