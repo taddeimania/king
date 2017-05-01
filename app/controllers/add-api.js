@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   // defaults
+  error: "",
   stripUri: true,
   preserveHost: false,
   retries: 5,
@@ -10,7 +11,6 @@ export default Ember.Controller.extend({
   upstreamReadTimeout: 60000,
   httpsOnly: false,
   httpIfTerminated: true,
-
   resetFormValues() {
     this.set("apiName", "");
     this.set("apiUpstreamUrl", "");
@@ -25,9 +25,25 @@ export default Ember.Controller.extend({
     this.set("preserveHost", false);
     this.set("httpsOnly", false);
     this.set("httpIfTerminated", true);
+    this.set("error", "");
   },
   actions: {
     createApi() {
+      let apiName = this.get("apiName"),
+          upstream_url = this.get("apiUpstreamUrl"),
+          hosts = this.get("apiHosts"),
+          uris = this.get("apiUris"),
+          methods = this.get("apiMethods");
+      if (!apiName || !upstream_url) {
+        this.set("error", "Cannot create an API without an Api name and an Upstream URL")
+        window.scrollTo(0,0);
+        return ;
+      }
+      if (!hosts && !uris && !methods) {
+        this.set("error", "Need at least ONE of Hosts, Uris, or Methods filled out")
+        window.scrollTo(0,0);
+        return ;
+      }
       let newApi = this.store.createRecord('api', {
         name: this.get("apiName"),
         upstream_url: this.get("apiUpstreamUrl"),

@@ -1,6 +1,11 @@
 <div>
 <h3>Add an API to Kong</h3>
 <form>
+  {{#if error}}
+    <div class="alert alert-warning">
+      {{error}}
+    </div>
+  {{/if}}
   <div>
     <label for="apiName">Api Name:</label>
     {{input name="name" id="apiName" value=apiName}}
