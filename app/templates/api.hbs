@@ -1,4 +1,9 @@
 {{#each model as |api|}}
   {{api-widget model=api}}
+{{else}}
+<div>
+  <h3>Sorry! There aren't any APIs to show.</h3>
+  To get started adding APIs {{link-to "click here to start" "add-api"}}.
+</div>
 {{/each}}
 {{outlet}}
