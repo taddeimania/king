@@ -6,8 +6,7 @@ export default Ember.Route.extend({
     return Ember.$.getJSON(`${ENV.APP.API_HOST}/status`).then((response) => {
       return response;
     }).catch((response) => {
-
-      return  {};
+      return {"not_running": true};
     });
   }
 });

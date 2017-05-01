@@ -1,3 +1,9 @@
+{{#if model.not_running}}
+  <div>
+    <h3>Sorry! Kong does not appear to be running.</h3>
+    You may need to restart it by typing <code>kong start</code> in your terminal.
+  </div>
+{{else}}
 <div>
 <h3>Server Status</h3>
 <table>
@@ -115,3 +121,4 @@
 </table>
 {{outlet}}
 </div>
+{{/if}}
